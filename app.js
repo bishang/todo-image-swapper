@@ -12,6 +12,23 @@ function addTask() {
     });
 };
 
+function removeTask() {
+    var $container = $('.tasks ul');
+    
+    $container.on('click', 'li', function() {
+        $(this).remove();
+    });
+};
+
+function imageSwapper() {
+    $('select').on('change', function() {
+        var $imgSrc = $(this).val();
+        $('.main-img').attr('src', $imgSrc);
+    });
+};
+
 $(document).ready(function() {
     addTask();
+    removeTask();
+    imageSwapper();
 });
